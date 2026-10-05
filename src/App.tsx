@@ -12,9 +12,10 @@ function Navbar() {
 
   const links = [
     { href: '#overview', label: 'Overview' },
-    { href: '#innovations', label: 'Innovations' },
+    { href: '#innovations', label: 'Components' },
     { href: '#workplan', label: 'Work Plan' },
     { href: '#impact', label: 'Impact' },
+    { href: '#status', label: 'Status' },
     { href: '#budget', label: 'Budget' },
   ];
 
@@ -80,39 +81,54 @@ function Hero() {
       }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+        {/* Op.1: Proposal status banner */}
+        <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-4">
+          <span className="w-2 h-2 bg-amber-400 rounded-full" />
+          <span className="text-amber-300 text-xs sm:text-sm font-medium">
+            Proposal under preparation for the I3FLOAT 1st Open Call. Funding has not been awarded.
+          </span>
+        </div>
+
         <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 mb-8">
-          <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-          <span className="text-cyan-300 text-sm font-medium">I3FLOAT 2026 – Open Challenge 1.2.3</span>
+          <span className="text-cyan-300 text-sm font-medium">Open Challenge 1.2.3 — Probabilistic fatigue and failure models for mooring and anchoring systems</span>
         </div>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">BLUEPULSE AI</span>
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl text-slate-300 mb-4 font-light">
-          Intelligent Structural Monitoring & Predictive Maintenance
+          Intelligent Structural Monitoring &amp; Predictive Maintenance
         </p>
         <p className="text-lg text-slate-400 mb-10 max-w-3xl mx-auto">
           For Floating Offshore Wind Mooring Systems
         </p>
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+
+        {/* Op.2: TRL metrics corrected */}
+        <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <div className="text-2xl font-bold text-cyan-400">TRL 6→7</div>
-            <div className="text-xs text-slate-400 mt-1">Technology Advancement</div>
+            <div className="text-2xl font-bold text-cyan-400">Target TRL: 7</div>
+            <div className="text-xs text-slate-400 mt-1">Target Technology Readiness Level</div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
+            <div className="text-2xl font-bold text-amber-400">Starting TRL: pending evidence review</div>
+            <div className="text-xs text-slate-400 mt-1">Initial maturity to be documented</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
             <div className="text-2xl font-bold text-cyan-400">12 Months</div>
-            <div className="text-xs text-slate-400 mt-1">Project Duration</div>
+            <div className="text-xs text-slate-400 mt-1">Proposed Duration (M1–M12)</div>
           </div>
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
             <div className="text-2xl font-bold text-cyan-400">€60,000</div>
-            <div className="text-xs text-slate-400 mt-1">Total Budget</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <div className="text-2xl font-bold text-cyan-400">2027</div>
-            <div className="text-xs text-slate-400 mt-1">Implementation Year</div>
+            <div className="text-xs text-slate-400 mt-1">Proposed Budget — subject to approval</div>
           </div>
         </div>
+
+        {/* Op.3: Indicative schedule disclaimer */}
+        <p className="text-xs text-slate-500 mb-10 max-w-2xl mx-auto italic">
+          Indicative implementation schedule (M1–M12), subject to selection and contract signature. The provisional reference year is 2027; actual start depends on award.
+        </p>
+
         <a href="#overview" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:-translate-y-0.5">
-          Explore the Project
+          Explore the Proposal
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
@@ -134,12 +150,12 @@ function Overview() {
     <section id="overview" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Project Overview</span>
+          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Proposal Overview</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-            Addressing Critical Challenges in Floating Offshore Wind
+            Addressing a Critical Challenge in Floating Offshore Wind
           </h2>
           <p className="text-slate-600 max-w-3xl mx-auto text-lg">
-            BLUEPULSE AI develops an intelligent structural health monitoring and predictive maintenance solution combining artificial intelligence, physics-based digital twins and probabilistic fatigue models.
+            BLUEPULSE AI is a proposed project that aims to develop an intelligent structural health monitoring and predictive maintenance solution combining artificial intelligence, physics-based digital twins and probabilistic fatigue models for mooring and anchoring systems.
           </p>
         </div>
 
@@ -152,9 +168,9 @@ function Overview() {
             <p className="text-slate-600 mb-6 leading-relaxed">
               Conventional inspection and maintenance procedures can be costly, time-consuming and difficult to implement in offshore environments.
             </p>
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Solution</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Proposed Approach</h3>
             <p className="text-slate-600 leading-relaxed">
-              BLUEPULSE AI addresses these challenges by integrating structural monitoring data, environmental information and advanced predictive algorithms into a unified digital platform, supporting safer and more efficient maintenance strategies.
+              BLUEPULSE AI proposes to address these challenges by integrating structural monitoring data, environmental information and advanced predictive algorithms into a unified digital platform, supporting safer and more efficient maintenance strategies. The technical components described below are proposed developments, not demonstrated capabilities.
             </p>
           </div>
           <div className="relative">
@@ -168,7 +184,7 @@ function Overview() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Structural Monitoring</h4>
-                    <p className="text-slate-400 text-sm mt-1">Continuous assessment of mooring system operational behaviour</p>
+                    <p className="text-slate-400 text-sm mt-1">Proposed integration of sensor data to assess mooring system behaviour</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -179,7 +195,7 @@ function Overview() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">AI-Driven Prediction</h4>
-                    <p className="text-slate-400 text-sm mt-1">Hybrid models combining physics, ML and probabilistic analysis</p>
+                    <p className="text-slate-400 text-sm mt-1">Proposed hybrid models combining physics, ML and probabilistic analysis</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -190,7 +206,7 @@ function Overview() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Predictive Maintenance</h4>
-                    <p className="text-slate-400 text-sm mt-1">Decision-support tools for inspection prioritisation</p>
+                    <p className="text-slate-400 text-sm mt-1">Proposed decision-support tools for inspection prioritisation</p>
                   </div>
                 </div>
               </div>
@@ -211,7 +227,8 @@ function Innovations() {
         </svg>
       ),
       title: 'Hybrid Analytical Framework',
-      description: 'Combining physics-based structural models with machine learning algorithms to interpret monitoring data under changing environmental and operational conditions.',
+      description: 'Proposed combination of physics-based structural models with machine learning algorithms to interpret monitoring data under changing environmental and operational conditions.',
+      role: 'Supports Challenge 1.2.3 by enabling interpretation of structural responses under uncertainty.',
       color: 'from-cyan-500 to-cyan-600',
       bgLight: 'bg-cyan-50',
       textColor: 'text-cyan-600',
@@ -223,7 +240,8 @@ function Innovations() {
         </svg>
       ),
       title: 'Probabilistic Fatigue Assessment',
-      description: 'Accounting for uncertainties in environmental loads, material properties and structural responses to estimate fatigue accumulation and provide risk indicators.',
+      description: 'Proposed approach to account for uncertainties in environmental loads, material properties and structural responses to estimate fatigue accumulation and provide risk indicators.',
+      role: 'Directly addresses the core requirement of Challenge 1.2.3.',
       color: 'from-blue-500 to-blue-600',
       bgLight: 'bg-blue-50',
       textColor: 'text-blue-600',
@@ -235,7 +253,8 @@ function Innovations() {
         </svg>
       ),
       title: 'Physics-Based Digital Twin',
-      description: 'Computational model representing the structural behaviour of mooring and anchoring systems under variable environmental and operational conditions.',
+      description: 'Proposed computational model representing the structural behaviour of mooring and anchoring systems under variable environmental and operational conditions.',
+      role: 'Supports Challenge 1.2.3 by providing a simulation foundation for probabilistic analysis.',
       color: 'from-indigo-500 to-indigo-600',
       bgLight: 'bg-indigo-50',
       textColor: 'text-indigo-600',
@@ -247,7 +266,8 @@ function Innovations() {
         </svg>
       ),
       title: 'Decision-Support Platform',
-      description: 'Translating monitoring and predictive information into actionable recommendations, helping operators prioritise inspections and plan maintenance.',
+      description: 'Proposed platform to translate monitoring and predictive information into actionable recommendations, helping operators prioritise inspections and plan maintenance.',
+      role: 'Supports Challenge 1.2.3 by making probabilistic outputs actionable for maintenance decisions.',
       color: 'from-violet-500 to-violet-600',
       bgLight: 'bg-violet-50',
       textColor: 'text-violet-600',
@@ -258,12 +278,12 @@ function Innovations() {
     <section id="innovations" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Key Innovations</span>
+          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Proposed Technical Components</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-            Three Interconnected Technological Advances
+            Four Complementary Technical Components
           </h2>
           <p className="text-slate-600 max-w-3xl mx-auto text-lg">
-            BLUEPULSE AI introduces an innovative approach to structural integrity assessment and predictive maintenance for floating offshore wind mooring systems.
+            All four components are proposed to support Open Challenge 1.2.3 — Probabilistic fatigue and failure models for mooring and anchoring systems. They are described as development objectives, not demonstrated capabilities.
           </p>
         </div>
 
@@ -274,23 +294,27 @@ function Innovations() {
                 {item.icon}
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+              <p className="text-slate-600 text-sm leading-relaxed mb-3">{item.description}</p>
+              <p className="text-xs text-slate-500 italic border-t border-slate-100 pt-3">{item.role}</p>
               <div className={`absolute bottom-0 left-6 right-6 h-1 bg-gradient-to-r ${item.color} rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
             </div>
           ))}
         </div>
 
-        {/* Expected Results */}
+        {/* Op.4: Expected results with disclaimer */}
         <div className="mt-16 bg-gradient-to-br from-slate-900 to-blue-950 rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Expected Performance Targets</h3>
+          <h3 className="text-2xl font-bold text-white mb-2 text-center">Proposed Validation Targets</h3>
+          <p className="text-slate-400 text-sm text-center mb-6 max-w-2xl mx-auto">
+            Proposed validation targets, not demonstrated results. Metric definitions, reference baseline and validation dataset remain to be specified.
+          </p>
           <div className="grid sm:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-cyan-400 mb-2">≥90%</div>
-              <div className="text-slate-300 text-sm">Anomaly Detection Performance</div>
+              <div className="text-slate-300 text-sm">Proposed anomaly detection target</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-cyan-400 mb-2">20%</div>
-              <div className="text-slate-300 text-sm">Reduction in False Alarms</div>
+              <div className="text-slate-300 text-sm">Proposed reduction in false alarms</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-cyan-400 mb-2">TRL 7</div>
@@ -309,42 +333,43 @@ function WorkPlan() {
       id: 'WP1',
       title: 'Project Management & Coordination',
       period: 'M1–M12',
-      description: 'Technical coordination, financial control, milestone monitoring, risk management and reporting.',
+      description: 'Technical coordination, financial control, milestone monitoring, risk management and reporting throughout the project duration.',
       color: 'bg-slate-500',
     },
     {
       id: 'WP2',
-      title: 'Requirements & Technology Adaptation',
+      title: 'Requirements & Technology Baseline Assessment',
       period: 'M1–M2',
-      description: 'Define operational requirements, monitoring parameters and system architecture. Adapt existing TRL 6 technology.',
+      // Op.2: corrected — no claim of adapting existing TRL 6 technology
+      description: 'Assess the available technology baseline, document its demonstrated maturity and define the adaptations required for the proposed use case. Define operational requirements, monitoring parameters and system architecture.',
       color: 'bg-cyan-500',
     },
     {
       id: 'WP3',
       title: 'Data Integration & Digital Twin',
       period: 'M3–M4',
-      description: 'Integrate structural monitoring and environmental data. Develop physics-based digital twin of mooring systems.',
+      description: 'Proposed integration of structural monitoring and environmental data. Development or adaptation of a physics-based digital twin of mooring systems, subject to data availability.',
       color: 'bg-blue-500',
     },
     {
       id: 'WP4',
       title: 'AI & Probabilistic Modelling',
       period: 'M5–M6',
-      description: 'Develop machine learning algorithms and probabilistic fatigue/failure models for risk estimation.',
+      description: 'Proposed development of machine learning algorithms and probabilistic fatigue/failure models for risk estimation, contingent on WP3 outputs.',
       color: 'bg-indigo-500',
     },
     {
       id: 'WP5',
       title: 'Integration, Testing & Validation',
       period: 'M7–M10',
-      description: 'Integrate all components into functional demonstrator. Conduct testing and validation against reference methods.',
+      description: 'Proposed integration of all components into a functional demonstrator. Testing and validation against reference methods, subject to data and environment availability.',
       color: 'bg-violet-500',
     },
     {
       id: 'WP6',
-      title: 'Results & Commercialisation',
+      title: 'Results Assessment & Commercialisation',
       period: 'M11–M12',
-      description: 'Assess TRL achieved, prepare exploitation plan, define commercial offering and deployment roadmap.',
+      description: 'Assess the TRL actually achieved based on available evidence. Prepare exploitation plan, define commercial offering and deployment roadmap.',
       color: 'bg-purple-500',
     },
   ];
@@ -353,12 +378,12 @@ function WorkPlan() {
     <section id="workplan" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Implementation</span>
+          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Proposed Implementation</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-            Work Plan & Timeline
+            Work Plan &amp; Timeline
           </h2>
           <p className="text-slate-600 max-w-3xl mx-auto text-lg">
-            Six interconnected work packages over 12 months, from January to December 2027, following a progressive approach from requirements to commercialisation.
+            Six interconnected work packages over a proposed 12-month period (M1–M12). Indicative schedule, subject to selection and contract signature. The provisional reference year is 2027; actual start depends on award.
           </p>
         </div>
 
@@ -408,12 +433,12 @@ function Impact() {
     <section id="impact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Impact</span>
+          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Proposed Impact</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
             European Floating Offshore Wind Value Chain
           </h2>
           <p className="text-slate-600 max-w-3xl mx-auto text-lg">
-            Strengthening competitiveness and technological autonomy while supporting the digitalisation of the European renewable energy sector.
+            If funded, the project would aim to contribute to the competitiveness and technological autonomy of the floating offshore wind value chain, and to the digitalisation of the European renewable energy sector.
           </p>
         </div>
 
@@ -426,7 +451,7 @@ function Impact() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">Structural Integrity</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Improved assessment of structural deterioration, supporting reliability of floating wind assets and helping operators manage technical and economic risks.
+              The project would aim to improve assessment of structural deterioration, supporting reliability of floating wind assets and helping operators manage technical and economic risks.
             </p>
           </div>
           <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-2xl p-8">
@@ -437,7 +462,7 @@ function Impact() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">Digital Transformation</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Supporting adoption of AI, advanced simulation and data-driven asset management in the European renewable energy sector.
+              The project would aim to support adoption of AI, advanced simulation and data-driven asset management in the European renewable energy sector.
             </p>
           </div>
           <div className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-2xl p-8">
@@ -448,7 +473,7 @@ function Impact() {
             </div>
             <h3 className="text-xl font-bold text-slate-900 mb-3">Operational Efficiency</h3>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Reducing unnecessary offshore operations, associated costs and environmental impact through more targeted maintenance interventions.
+              The project would aim to reduce unnecessary offshore operations, associated costs and environmental impact through more targeted maintenance interventions.
             </p>
           </div>
         </div>
@@ -457,16 +482,16 @@ function Impact() {
         <div className="bg-slate-900 rounded-2xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-10">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Commercialisation Strategy</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Proposed Commercialisation Strategy</h3>
               <p className="text-slate-300 mb-6 leading-relaxed">
-                B2B strategy targeting floating offshore wind farm developers, operators, mooring system suppliers, engineering consultancies and offshore maintenance service providers.
+                If funded, the project would pursue a B2B strategy targeting floating offshore wind farm developers, operators, mooring system suppliers, engineering consultancies and offshore maintenance service providers.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
                     <span className="text-cyan-400 text-sm font-bold">1</span>
                   </div>
-                  <span className="text-slate-300 text-sm">Validation & industrial engagement during project</span>
+                  <span className="text-slate-300 text-sm">Validation &amp; industrial engagement during project</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
@@ -478,24 +503,24 @@ function Impact() {
                   <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
                     <span className="text-cyan-400 text-sm font-bold">3</span>
                   </div>
-                  <span className="text-slate-300 text-sm">Commercial B2B sales & technology partnerships</span>
+                  <span className="text-slate-300 text-sm">Commercial B2B sales &amp; technology partnerships</span>
                 </div>
               </div>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Business Model</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Proposed Business Model</h3>
               <div className="space-y-4">
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <h4 className="text-cyan-400 font-semibold mb-1">Integration & Configuration</h4>
-                  <p className="text-slate-400 text-sm">Initial setup fee for deployment and customisation</p>
+                  <h4 className="text-cyan-400 font-semibold mb-1">Integration &amp; Configuration</h4>
+                  <p className="text-slate-400 text-sm">Proposed initial setup fee for deployment and customisation</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                   <h4 className="text-cyan-400 font-semibold mb-1">Software Licensing</h4>
-                  <p className="text-slate-400 text-sm">Recurring licensing with monitoring and support services</p>
+                  <p className="text-slate-400 text-sm">Proposed recurring licensing with monitoring and support services</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                   <h4 className="text-cyan-400 font-semibold mb-1">Value-Added Services</h4>
-                  <p className="text-slate-400 text-sm">Custom analytics, engineering studies and third-party integration</p>
+                  <p className="text-slate-400 text-sm">Proposed custom analytics, engineering studies and third-party integration</p>
                 </div>
               </div>
             </div>
@@ -506,14 +531,109 @@ function Impact() {
   );
 }
 
+function Challenge() {
+  return (
+    <section className="py-24 bg-gradient-to-br from-blue-950 via-slate-900 to-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Selected Open Challenge</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
+            Open Challenge 1.2.3
+          </h2>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Probabilistic fatigue and failure models for mooring and anchoring systems
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+            <p className="text-slate-300 leading-relaxed mb-6">
+              BLUEPULSE AI is proposed to address this challenge by developing an integrated solution to assess structural deterioration and support predictive maintenance in floating offshore wind installations. The four technical components described above (hybrid analytical framework, probabilistic fatigue assessment, physics-based digital twin and decision-support platform) are proposed as complementary elements supporting Challenge 1.2.3.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-white/5 rounded-xl p-5">
+                <h4 className="text-cyan-400 font-semibold mb-2">Problem</h4>
+                <p className="text-slate-400 text-sm">
+                  Mooring systems exposed to variable loads, cyclic stresses and complex conditions that accelerate fatigue and increase failure risk, with significant uncertainties in environmental loads and material properties.
+                </p>
+              </div>
+              <div className="bg-white/5 rounded-xl p-5">
+                <h4 className="text-cyan-400 font-semibold mb-2">Proposed Approach</h4>
+                <p className="text-slate-400 text-sm">
+                  The proposal intends to incorporate operational measurements and uncertainty-aware predictive models for earlier identification of deterioration. This approach is proposed; it has not yet been demonstrated.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DevelopmentStatus() {
+  return (
+    <section id="status" className="py-24 bg-amber-50/50 border-y border-amber-200/50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <span className="text-amber-700 font-semibold text-sm uppercase tracking-wider">Transparency</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+            Development and Validation Status
+          </h2>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-amber-200 p-8 md:p-10 shadow-sm">
+          <p className="text-slate-700 leading-relaxed mb-6">
+            This website is an <strong>informational presentation</strong> of a proposal under preparation. It is not an operational offshore monitoring demonstrator. The technical components described on this site are proposed developments, not validated products or services.
+          </p>
+
+          <h3 className="text-lg font-bold text-slate-900 mb-4">Items pending evidence or confirmation</h3>
+          <ul className="space-y-3 mb-6">
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+              <span className="text-slate-700 text-sm"><strong>Initial TRL accreditation.</strong> The starting Technology Readiness Level has not yet been documented with verifiable evidence. The proposal states a target of TRL 7; the actual starting TRL is pending evidence review.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+              <span className="text-slate-700 text-sm"><strong>Access to operational data.</strong> No formal data access agreement with an offshore wind operator or asset owner has been confirmed. Data availability will determine whether WP3–WP5 can proceed as planned.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+              <span className="text-slate-700 text-sm"><strong>Validation environment.</strong> No operational floating offshore wind installation has been confirmed for testing. If operational access is unavailable, the final TRL will be reported according to the evidence actually obtained.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+              <span className="text-slate-700 text-sm"><strong>Evaluation protocol.</strong> Metric definitions, reference baseline, validation dataset and acceptance criteria for the proposed performance targets (≥90% anomaly detection, 20% false alarm reduction) remain to be specified.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-amber-500 flex-shrink-0" />
+              <span className="text-slate-700 text-sm"><strong>Partnerships and collaborators.</strong> No industrial partners, data providers, test facilities or subcontractors have been formally confirmed at this stage.</span>
+            </li>
+          </ul>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <p className="text-amber-900 text-sm leading-relaxed">
+              <strong>Note.</strong> The corrections on this page do not certify compliance with the I3FLOAT call requirements. Eligibility and conformity will be determined by the evaluation process. The applicant remains responsible for providing the evidence required by the call.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Budget() {
   const budgetItems = [
     { title: 'Project Management & Coordination', amount: 5000, months: 'M1–M12' },
-    { title: 'Technical Requirements & Adaptation', amount: 9000, months: 'M1–M2' },
+    { title: 'Requirements & Technology Baseline Assessment', amount: 9000, months: 'M1–M2' },
     { title: 'Data Integration & Digital Twin', amount: 13000, months: 'M3–M4' },
     { title: 'AI & Probabilistic Modelling', amount: 14000, months: 'M5–M6' },
     { title: 'Integration, Testing & Validation', amount: 15000, months: 'M7–M10' },
-    { title: 'Results & Commercialisation', amount: 4000, months: 'M11–M12' },
+    { title: 'Results Assessment & Commercialisation', amount: 4000, months: 'M11–M12' },
   ];
 
   const total = budgetItems.reduce((sum, item) => sum + item.amount, 0);
@@ -522,12 +642,12 @@ function Budget() {
     <section id="budget" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Resources</span>
+          <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Proposed Resources</span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
-            Budget Allocation
+            Proposed Budget Allocation
           </h2>
           <p className="text-slate-600 max-w-3xl mx-auto text-lg">
-            Total requested funding of €60,000 allocated across six work packages, proportionate to the 12-month innovation project scope.
+            Proposed budget: EUR 60,000. Requested funding: EUR 60,000 — subject to approval. The breakdown by eligible cost categories is pending validation.
           </p>
         </div>
 
@@ -535,7 +655,8 @@ function Budget() {
           {/* Budget table */}
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div className="p-6 border-b border-slate-100">
-              <h3 className="text-lg font-bold text-slate-900">PP1 – Lead Partner Budget</h3>
+              <h3 className="text-lg font-bold text-slate-900">Applicant Budget</h3>
+              <p className="text-xs text-slate-500 mt-1">Single applicant. Breakdown by eligible cost categories pending validation.</p>
             </div>
             <div className="divide-y divide-slate-100">
               {budgetItems.map((item, index) => (
@@ -557,7 +678,7 @@ function Budget() {
               ))}
             </div>
             <div className="p-4 bg-slate-900 flex items-center justify-between">
-              <span className="text-white font-semibold">Total Requested Funding</span>
+              <span className="text-white font-semibold">Total Proposed Funding</span>
               <span className="text-cyan-400 font-bold text-xl">€{total.toLocaleString()}</span>
             </div>
           </div>
@@ -594,7 +715,7 @@ function Budget() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-slate-900">€60K</div>
-                  <div className="text-xs text-slate-500">Total Budget</div>
+                  <div className="text-xs text-slate-500">Proposed Budget</div>
                 </div>
               </div>
             </div>
@@ -608,50 +729,6 @@ function Budget() {
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Challenge() {
-  return (
-    <section className="py-24 bg-gradient-to-br from-blue-950 via-slate-900 to-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
-      </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">I3FLOAT Open Challenge</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
-            Challenge 1.2.3
-          </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Probabilistic fatigue and failure models for mooring and anchoring systems
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-            <p className="text-slate-300 leading-relaxed mb-6">
-              BLUEPULSE AI directly addresses this challenge by developing an integrated solution to assess structural deterioration and support predictive maintenance in floating offshore wind installations. The solution combines structural monitoring data, physics-based digital twins, artificial intelligence and probabilistic fatigue and failure models.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-white/5 rounded-xl p-5">
-                <h4 className="text-cyan-400 font-semibold mb-2">Problem</h4>
-                <p className="text-slate-400 text-sm">
-                  Mooring systems exposed to variable loads, cyclic stresses and complex conditions that accelerate fatigue and increase failure risk, with significant uncertainties in environmental loads and material properties.
-                </p>
-              </div>
-              <div className="bg-white/5 rounded-xl p-5">
-                <h4 className="text-cyan-400 font-semibold mb-2">Approach</h4>
-                <p className="text-slate-400 text-sm">
-                  Unlike periodic inspections or deterministic calculations, our system incorporates operational measurements and uncertainty-aware predictive models for earlier identification of deterioration.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -679,16 +756,16 @@ function Footer() {
             </p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Project Details</h4>
+            <h4 className="text-white font-semibold mb-4">Proposal Details</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>I3FLOAT 2026 – Open Challenge</li>
-              <li>Challenge 1.2.3: Probabilistic Fatigue Models</li>
-              <li>Duration: 12 months (Jan–Dec 2027)</li>
-              <li>Budget: €60,000</li>
+              <li>I3FLOAT 1st Open Call — Open Challenge 1.2.3</li>
+              <li>Challenge: Probabilistic fatigue and failure models for mooring and anchoring systems</li>
+              <li>Proposed duration: 12 months (M1–M12)</li>
+              <li>Proposed budget: EUR 60,000</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Key Focus Areas</h4>
+            <h4 className="text-white font-semibold mb-4">Proposed Focus Areas</h4>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>Structural Health Monitoring</li>
               <li>AI-Driven Predictive Analytics</li>
@@ -697,15 +774,14 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
-            © 2026 BLUEPULSE AI – I3FLOAT Project. All rights reserved.
+        {/* Op.1: Footer disclaimer replacing "Funded by I3FLOAT • Horizon Europe" */}
+        <div className="border-t border-slate-800 pt-8">
+          <p className="text-slate-400 text-sm text-center leading-relaxed max-w-3xl mx-auto">
+            BLUEPULSE AI — Proposal under preparation for the I3FLOAT 1st Open Call. Project implementation is subject to selection and contract signature.
           </p>
-          <div className="flex items-center gap-2 text-slate-500 text-sm">
-            <span>Funded by</span>
-            <span className="text-cyan-400 font-medium">I3FLOAT</span>
-            <span>• Horizon Europe</span>
-          </div>
+          <p className="text-slate-600 text-xs text-center mt-4">
+            © 2026 BLUEPULSE AI. This is an informational website for a proposal under preparation. No funding has been awarded.
+          </p>
         </div>
       </div>
     </footer>
@@ -722,6 +798,7 @@ export default function App() {
       <WorkPlan />
       <Impact />
       <Challenge />
+      <DevelopmentStatus />
       <Budget />
       <Footer />
     </div>
