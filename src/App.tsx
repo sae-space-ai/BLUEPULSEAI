@@ -22,7 +22,7 @@ function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between min-h-16 py-3">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,14 +31,14 @@ function Navbar() {
             </div>
             <span className="text-white font-bold text-lg">BLUEPULSE AI</span>
           </div>
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             {links.map(link => (
               <a key={link.href} href={link.href} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">
                 {link.label}
               </a>
             ))}
           </div>
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-white">
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-white">
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -50,7 +50,7 @@ function Navbar() {
         </div>
       </div>
       {mobileOpen && (
-        <div className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700">
+        <div className="lg:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700">
           <div className="px-4 py-3 space-y-2">
             {links.map(link => (
               <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="block text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium py-2">
@@ -66,7 +66,7 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32 pb-12">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900" />
       <div className="absolute inset-0 opacity-30">
@@ -80,50 +80,50 @@ function Hero() {
         backgroundSize: '60px 60px'
       }} />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 text-center">
         {/* Op.1: Proposal status banner */}
-        <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-4">
-          <span className="w-2 h-2 bg-amber-400 rounded-full" />
-          <span className="text-amber-300 text-xs sm:text-sm font-medium">
+        <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-2xl sm:rounded-full px-4 py-2 mb-4 max-w-full">
+          <span className="w-2 h-2 bg-amber-400 rounded-full flex-shrink-0" />
+          <span className="text-amber-300 text-xs sm:text-sm font-medium leading-relaxed text-left">
             Proposal under preparation for the I3FLOAT 1st Open Call. Funding has not been awarded.
           </span>
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-full px-4 py-2 mb-8">
-          <span className="text-cyan-300 text-sm font-medium">Open Challenge 1.2.3 — Probabilistic fatigue and failure models for mooring and anchoring systems</span>
+        <div className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 rounded-2xl sm:rounded-full px-4 py-2 mb-6 sm:mb-8 max-w-full">
+          <span className="text-cyan-300 text-xs sm:text-sm font-medium leading-relaxed text-left">Open Challenge 1.2.3 — Probabilistic fatigue and failure models for mooring and anchoring systems</span>
         </div>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
           <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">BLUEPULSE AI</span>
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl text-slate-300 mb-4 font-light">
+        <p className="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-3 sm:mb-4 font-light">
           Intelligent Structural Monitoring &amp; Predictive Maintenance
         </p>
-        <p className="text-lg text-slate-400 mb-10 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg text-slate-400 mb-6 sm:mb-8 max-w-3xl mx-auto">
           For Floating Offshore Wind Mooring Systems
         </p>
 
         {/* Op.2: TRL metrics corrected */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <div className="text-2xl font-bold text-cyan-400">Target TRL: 7</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4 mb-5 sm:mb-6 max-w-5xl mx-auto">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 sm:px-6 py-4 min-w-0">
+            <div className="text-xl sm:text-2xl font-bold text-cyan-400 break-words">Target TRL: 7</div>
             <div className="text-xs text-slate-400 mt-1">Target Technology Readiness Level</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <div className="text-2xl font-bold text-amber-400">Starting TRL: pending evidence review</div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 sm:px-6 py-4 min-w-0">
+            <div className="text-xl sm:text-2xl font-bold text-amber-400 break-words">Starting TRL: pending evidence review</div>
             <div className="text-xs text-slate-400 mt-1">Initial maturity to be documented</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <div className="text-2xl font-bold text-cyan-400">12 Months</div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 sm:px-6 py-4 min-w-0">
+            <div className="text-xl sm:text-2xl font-bold text-cyan-400 break-words">12 Months</div>
             <div className="text-xs text-slate-400 mt-1">Proposed Duration (M1–M12)</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4">
-            <div className="text-2xl font-bold text-cyan-400">€60,000</div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 sm:px-6 py-4 min-w-0">
+            <div className="text-xl sm:text-2xl font-bold text-cyan-400 break-words">€60,000</div>
             <div className="text-xs text-slate-400 mt-1">Proposed Budget — subject to approval</div>
           </div>
         </div>
 
         {/* Op.3: Indicative schedule disclaimer */}
-        <p className="text-xs text-slate-500 mb-10 max-w-2xl mx-auto italic">
+        <p className="text-xs text-slate-500 mb-5 sm:mb-6 max-w-2xl mx-auto italic">
           Indicative implementation schedule (M1–M12), subject to selection and contract signature. The provisional reference year is 2027; actual start depends on award.
         </p>
 
@@ -135,8 +135,8 @@ function Hero() {
         </a>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      {/* Scroll indicator — visible only when vertical space allows */}
+      <div className="hidden lg:block absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg className="w-6 h-6 text-cyan-400/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
