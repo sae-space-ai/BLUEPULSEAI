@@ -1,0 +1,2 @@
+# BLUEPULSEAI
+BLUEPULSE AI Application
